@@ -1,17 +1,3 @@
-{{-- <div>
-    <ul>
-        @foreach($categories as $category)
-            <li>
-                {{ $category->name }}
-                @if($category->children->isNotEmpty())
-                    <x-category-tree :categories="$category->children" />
-                @endif
-            </li>
-        @endforeach
-    </ul>
-</div> --}}
-
- 
 <ul class="list-group list-group-flush">
     @foreach($categories as $category)
         <li class="list-group-item">
@@ -26,7 +12,8 @@
                         <span class="badge bg-secondary">{{ $category->allProducts()->count() }}</span>
                     </a>
                 @else
-                    <a href="{{route('category', $category->id)}}"
+                    {{-- <a href="{{route('category', $category->id)}}" --}}
+                        <a href=#"
                        class="category-link flex-grow-1 text-decoration-none"
                        data-category-id="{{ $category->id }}">
                         <span class="ms-4">{{ $category->name }}</span>
@@ -55,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const categoryId = this.dataset.categoryId;
             console.log('Selected category ID:', categoryId);
+            
             
            
             

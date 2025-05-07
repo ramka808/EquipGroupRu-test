@@ -52,5 +52,6 @@ class Group extends Model
     public function parentRecursive(): BelongsTo
     {
         return $this->parent()->with('parentRecursive');
+        
     }
 }

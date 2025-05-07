@@ -13,4 +13,5 @@ class Product extends Model
         return $this->hasOne(Price::class, 'id_product', 'id');
     }
 
+    
 }
